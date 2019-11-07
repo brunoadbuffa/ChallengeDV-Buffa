@@ -1,5 +1,7 @@
 # ChallengeDV-Buffa
-Challenge sobre k-means++
+Challenge sobre k-means++. 
+
+El archivo *respuestas.txt* contiene las respuestas a las consignas planteadas en el challenge y el archivo *challengeBUFFA.py* contiene el código python donde se implenta al algoritmo requerido.
 
 ## Utilización del módulo de Python "challengeBUFFA".
 
