@@ -1,0 +1,12 @@
+Consignas 1) Proponer posibles optimizaciones (numéricas, computacionales) sobre el código generado.
+          2) ¿Cuáles son las ventajas de k-means++?
+
+1) Se propuso, y se incluyó en el código de la función k_meansMODIF, agregar el criterio de parada basado en la diferencia entre el potencial ('distortion') del paso k con el del paso k+1 para el algoritmo de k-means.
+Por otro lado es importante saber quem para el cálculo del potencial en cada paso, es posible utilizar una distancia distinta a la EUCLÍDEA, que es la que actualmente se utiliza. Esto puede significar una mejora en el algoritmo dependiendo de qué tipos de datos se estén manejando. Finalmente, sería interesante calcular el error (la diferencia entre los centroides) como el error cuadrático para dar mayor estabilidad a los cálculos.
+
+2) Como se enunciarnon en el README del repositorio, transcribo aquí las ventajas del algoritmo k-means++.
+
+Dicho algoritmo es una mejora del clásico algoritmo de k-means. La diferencia entre ellos radica en que k-means clásico elije los valores iniciales para los centroides de manera aleatoria entre los datos proporcionados por el usuario y k-means++ lo hace mediante el método denominado por los autores como 𝐷2 weighting. Esta forma innovadora para definir los primeros centroides consiste en, luego de elegir el primer centroide al azar, ir tomando el resto de los centroides de entre el conjunto de datos con probabilidad directamente proporcional a la distancia de cada dato respecto al centroide más cercano que ya esté calculado. La principal ventaja de este cambio en la inicialización del algoritmo de k-means es que se consigue que el valor esperado del potencial (𝜙) dado por la solución de nuestro algoritmo está acotado por 𝐶 ln(𝑘) 𝜙𝑂𝑃𝑇 donde 𝐶 es alguna constante y 𝜙𝑂𝑃𝑇 es el potencial óptimo que se puede obtener. En efecto, se puede demostrar que se cumple la siguiente desigualdad: 𝐸[𝜙]≤8(ln(𝑘)+2)𝜙𝑂𝑃𝑇, o sea. k-means++ es O(ln(𝑘))-Competitivo.
+
+
+
